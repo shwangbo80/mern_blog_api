@@ -15,8 +15,7 @@ app.use(cors());
 dotenv.config();
 
 mongoose.connect(
-  "mongodb://127.0.0.1:27017/blog",
-  //   "mongodb+srv://admin:9USeoa15YeVPZE2j@blog.6yv0mwh.mongodb.net/blog",
+  process.env.MONGO_ATLAS_URL,
   {useNewUrlParser: true, useUnifiedTopology: true},
   () => {
     console.log("Connected to MongoDB");
