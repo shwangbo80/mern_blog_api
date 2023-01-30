@@ -4,7 +4,7 @@ const Post = require("../models/Post");
 //Get all posts
 router.get("/all", async (req, res) => {
   try {
-    const post = await Post.find().sort("updatedAt").exec();
+    const post = await Post.find().sort("createdAt").exec();
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json(err);
